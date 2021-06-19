@@ -2,17 +2,17 @@
 
  -посещаем сайт:
 
- [link](https://letsencrypt.org/ru/getting-started/)
+ [let's encrypt](https://letsencrypt.org/ru/getting-started/)
 
  -выбираем пункт "Приступить":
 
  -по SSH:
 
- [link](https://certbot.eff.org/)
+ [certbot](https://certbot.eff.org/)
 
  -выбираем "nginx" и "ОС" установленную на сервере:
 
- [link](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx)
+ [certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx)
 
  (4й пункт пропускаем, т.к. у нас чистый сервер)
 
