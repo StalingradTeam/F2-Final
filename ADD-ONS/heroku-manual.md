@@ -46,6 +46,11 @@ ALLOWED_HOSTS = []  (не надо в скобки ничего вписыват
 
 - не забываем прятать SECRET_KEY
 
--в requirements.txt - добавить:
+- в requirements.txt - добавить:
 
        django-heroku
+       
+- не забываем про Procfile:
+
+       release: python manage.py migrate
+       web: python manage.py runserver 0.0.0.0:$PORT
