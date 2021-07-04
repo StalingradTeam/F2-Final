@@ -1,0 +1,9 @@
+django==3.1.2
+Pillow==8.0.0
+psycopg2==2.8.6
+gunicorn
+django-heroku
+dj_database_url
+whitenoise
+MarkupSafe
+python-dotenv
