@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} Руководство {% endblock %}
+
+{% block content %}
+  <div class="container my-5 z-depth-1">
+    <section class="dark-grey-text">
+      <div class="row pr-lg-5">
+        <div class="col-md-7 mb-4">
+        </div>
+        <div class="col-md-5 d-flex align-items-center my-3">
+          <div class="text-center">
+            <CENTER><h2 class="font-weight-bold mb-4">Раздел опросов</h2></CENTER>
+            <CENTER><p align="center" opacity: 0.7;>
+                         <p><h3>Дорогой читатель !</h3></p>
+
+            <p>Просим тебя ответить на ряд вопросов, которые смогут помочь нам.</p>
+
+            <p><h4>Необходимо учесть:</h4></p>
+
+            <p>- некоторые вопросы могут подразумевать несколько ответов на них;</p>
+
+            <p>- ответ будет оценён баллами;</p>
+
+            <p>- позже будет дана возможность ознакомления с общим стат.анализом ответов. </p>
+              
+              <p><h4>(ни пуха, ни пера !!!)</h4></p>
+
+           </p></CENTER>
+            <a type="button" class="btn btn-orange btn-rounded mx-0" href="
+              {% if username %}
+                /polls-list/all/
+              {% else %}
+                /login/
+              {% endif %}
+            ">Опросы</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

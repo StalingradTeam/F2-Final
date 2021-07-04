@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="robots" content="index, follow" />
+  {% block seo %}
+  {% endblock seo %}
+  <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+  <title>Страница не найдена.</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+</head>
+
+<body>
+ <body style="background-color: silver;">
+  <div class="container mt-5 py-5">
+    <div class="card text-center">
+      <CENTER><div class="card-header">
+        <h1 style="margin-top: 15rem; font-family: 'Oswald', cursive;">Ошибка 404</h1>
+      </div></CENTER>
+      <div class="card-body">
+        <CENTER><h1 class="card-title">404</h1></CENTER>
+        <CENTER><p class="card-text">Мы не смогли найти страницу ...</p></CENTER>
+        <CENTER><a href="/" class="btn btn-light">Перейти на главную</a></CENTER>
+      </div>
+    </div>
+  </div>
+
+</body>

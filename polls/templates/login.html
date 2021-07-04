@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} Вход {% endblock %}
+
+{% block content %}
+  <div class="container my-5 px-0 z-depth-1">
+    <section class="p-5 my-md-5 text-center">
+      <div class="my-5 mx-md-5">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card">
+              <div class="card-body">
+                <form class="text-center" style="color: #757575;" method="post">
+                  {% csrf_token %}
+                  <CENTER><h3 class="font-weight-bold my-4 pb-2 text-center dark-grey-text">Войти на сайт:</h3></CENTER>
+                  <CENTER><input type="text" name="username" autocomplete="username" maxlength="150" id="id_username" class="form-control mb-4" placeholder="Имя"></CENTER>
+                  <p>
+                  </p>
+                  <CENTER><input type="password" name="password" autocomplete="current-password" id="id_password" class="form-control" placeholder="Пароль"></CENTER>
+                  {% if form.non_field_errors %}
+                    <CENTER><p class="lead text-center red-text text-muted pt-2 mt-2 mb-2 error">Имя либо Пароль неверны !!!</p></CENTER>
+                  {% endif %}
+                  <div class="text-center">
+                    <p>
+                    </p>
+                    <CENTER><button type="submit" class="btn btn-outline-orange btn-rounded my-4 waves-effect">->ВХОД<-</button></CENTER>
+                  </div>
+                  <CENTER><p><a href="/signup/">Зарегистрироваться</a>
+                  </p></CENTER> 
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

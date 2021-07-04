@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="robots" content="index, follow" />
+  <title>Опросник {% block extra_title %}{% endblock extra_title %}</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  
+</head>
+
+<body>
+  <header>
+    <body style="background-color: silver;">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: yellow;">
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <span class="navbar-text">
+        <h1 style="margin-left: 33rem; margin-top: 5rem; font-family: 'Oswald', cursive;">◉ ОПРОСЫ ◉</h1>
+        <h1 style="margin-left: 25rem; font-family: 'Oswald', cursive;">- нам важно знать Ваше мнение !!! -</h1>
+      </span>
+      </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center" style="background-color: red; font-family: 'Oswald', cursive;">
+        {% block header %}{% endblock header %}
+        </h2>
+      </div>
+    </div>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark unique-color">
+      <a class="navbar-brand" href="/">ОПРОСНИК</a>
+      <div class="collapse navbar-collapse" id="basicNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Главная</a>
+          </li>
+          {% if username %}
+            <li class="nav-item">
+              <a class="nav-link" href="/polls-list/all/">Опросник</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/statistics/">Стат.анализ</a>
+            </li>
+            {% if staff %}
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/">Админ-панель</a>
+              </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="/logout/">Выйти</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/login/">Войти</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      {% if username %}
+        <CENTER><h3><span class="navbar-text white-text">Рады приветствовать Вас {{ username }} !</span></h3></CENTER>
+      {% endif %}
+    </nav>
+  </header>
+  
+  <main style="margin-top: 80px;">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+      <CENTER class="p-small" style = 'margin-top: 5%; background-color: red; '><p><h3>&copy; Copyright <a href="https://skillfactory.ru/">SF</a> - 2020-2021 by student job.</h3></p></CENTER>
+      </div>
+     </div>
+    </div>
+  </footer>  
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/mdb.min.js' %}"></script>
+  
+</body>
+
+</html>
